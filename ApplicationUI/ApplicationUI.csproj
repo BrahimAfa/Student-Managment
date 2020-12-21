@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5CEF46B4-60C1-4315-A7D0-2DBF6796C3D6}</ProjectGuid>
+    <ProjectGuid>{84004197-B2F4-4C80-B3B8-FCF9841B468E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ApplicationUI</RootNamespace>
     <AssemblyName>ApplicationUI</AssemblyName>
@@ -33,13 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\Desktop\Desktop 2K19\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\dev\test\Gestion-de-Stock_\DLLs\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,13 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Etudiant\EtudiantModel.cs" />
     <Compile Include="Etudiant\EtudiantForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Etudiant\EtudiantForm.Designer.cs">
       <DependentUpon>EtudiantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Etudiant\EtudiantModel.cs" />
     <Compile Include="Etudiant\ImportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,13 +64,13 @@
       <DependentUpon>ImportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Etudiant\Validation.cs" />
-    <Compile Include="Filiere\FiliereModel.cs" />
     <Compile Include="Filiere\FiliereForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Filiere\FiliereForm.Designer.cs">
       <DependentUpon>FiliereForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Filiere\FiliereModel.cs" />
     <Compile Include="Filiere\Validation.cs" />
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
@@ -87,11 +86,8 @@
     <Compile Include="Reporting\ReportingForm.Designer.cs">
       <DependentUpon>ReportingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.resx</DependentUpon>
-    </Compile>
+    <Compile Include="Reporting\Validation.cs" />
+    <Compile Include="Resource.Designer.cs" />
     <Compile Include="Services\EtudiantService.cs" />
     <Compile Include="Statistics\StatisticsForm.cs">
       <SubType>Form</SubType>
@@ -119,15 +115,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reporting\ReportingForm.resx">
       <DependentUpon>ReportingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx" />
     <EmbeddedResource Include="Statistics\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,25 +137,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8_Delete_64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8_Person_64px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8_Person_64px_1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8_Edit_Pie_Chart_Report_64px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8_Statistics_64px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8_Student_Male_64px.png" />
+    <Content Include="Resources\icons8_Delete_64.png" />
+    <Content Include="Resources\icons8_Edit_Pie_Chart_Report_64px.png" />
+    <Content Include="Resources\icons8_Person_64px.png" />
+    <Content Include="Resources\icons8_Person_64px_1.png" />
+    <Content Include="Resources\icons8_Statistics_64px.png" />
+    <Content Include="Resources\icons8_Student_Male_64px.png" />
+    <Content Include="Resources\icons8_Upload_64px_1.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
@@ -172,7 +152,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8_Upload_64px_1.png" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
