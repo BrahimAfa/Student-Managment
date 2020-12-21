@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StudentManagement
+namespace ApplicationUI.Filiere
 {
-  public partial class Form1 : Form
+  public partial class FiliereForm : Form
   {
-    public Form1()
+    public FiliereForm()
     {
       InitializeComponent();
+    }
+
+    private void FormFiliere_Load(object sender, EventArgs e)
+    {
+
     }
   }
 }

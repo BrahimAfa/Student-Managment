@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace StudentManagement.Properties
+namespace hello.Properties
 {
 
 
