@@ -54,5 +54,10 @@ namespace ApplicationUI
     {
       new ReportingForm().ShowDialog();
     }
-  }
+
+        private void DataTableEtudiant_Click(object sender, EventArgs e)
+        {
+            new DataEtudiant().ShowDialog();
+        }
+    }
 }
