@@ -64,10 +64,10 @@
       <DependentUpon>ImportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Etudiant\Validation.cs" />
-    <Compile Include="Filiere\DataEtudiant.cs">
+    <Compile Include="Etudiant\DataEtudiant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Filiere\DataEtudiant.Designer.cs">
+    <Compile Include="Etudiant\DataEtudiant.Designer.cs">
       <DependentUpon>DataEtudiant.cs</DependentUpon>
     </Compile>
     <Compile Include="Filiere\FiliereForm.cs">
@@ -94,6 +94,11 @@
     </Compile>
     <Compile Include="Reporting\Validation.cs" />
     <Compile Include="Resource.Designer.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Services\EtudiantService.cs" />
     <Compile Include="Statistics\StatisticsForm.cs">
       <SubType>Form</SubType>
@@ -106,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Etudiant\ImportForm.resx">
       <DependentUpon>ImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Etudiant\DataEtudiant.resx">
+      <DependentUpon>DataEtudiant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Filiere\FiliereForm.resx">
       <DependentUpon>FiliereForm.cs</DependentUpon>
@@ -125,7 +133,10 @@
     <EmbeddedResource Include="Reporting\ReportingForm.resx">
       <DependentUpon>ReportingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resource.resx" />
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Statistics\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
