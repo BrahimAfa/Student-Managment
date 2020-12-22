@@ -21,5 +21,10 @@ namespace StudentManagementBeta.Etudiant
     {
 
     }
-  }
+
+        private void AjouterEtudiant_Click(object sender, EventArgs e)
+        {
+            new EtudiantForm().ShowDialog();
+        }
+    }
 }

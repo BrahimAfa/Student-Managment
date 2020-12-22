@@ -33,7 +33,7 @@ namespace StudentManagementBeta
 
     private void bunifuTileButton1_Click(object sender, EventArgs e)
     {
-      new EtudiantForm().ShowDialog();
+      new DataEtudiant().ShowDialog();
     }
 
     private void bunifuTileButton5_Click(object sender, EventArgs e)
