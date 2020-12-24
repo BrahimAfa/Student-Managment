@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Database;
 using StudentManagementBeta.Etudiant;
+using System.Data;
 using System.Data.SqlClient;
 namespace StudentManagementBeta.Services
 {
@@ -25,7 +26,7 @@ namespace StudentManagementBeta.Services
       throw new NotImplementedException();
     }
 
-    public List<EtudiantModel> getAll()
+    public DataTable getAll()
     {
       throw new NotImplementedException();
     }

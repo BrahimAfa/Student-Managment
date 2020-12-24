@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Core
 {
-  class Config {
-    public static string CONNECTION_STRING = @"";
+  static class Config {
+    public static string CONNECTION_STRING = @"Data Source=DESKTOP-GFRQLGV\SQLEXPRESS;Initial Catalog=GestionEtudiant;Integrated Security=True";
   }
 }
