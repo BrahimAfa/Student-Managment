@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudentManagementBeta.Etudiant
 {
-  class EtudiantModel : IComparer<EtudiantModel>
+  class EtudiantModel
     {
         public int id;
         public string CNE;
@@ -45,12 +45,7 @@ namespace StudentManagementBeta.Etudiant
 
         }
 
-        public int Compare(EtudiantModel x, EtudiantModel y)
-        {
-            String ynom = x.nomEtudiant;
-            String xnom = y.nomEtudiant;
-            return ynom.CompareTo(xnom);
-        }
+
 
     }
 }

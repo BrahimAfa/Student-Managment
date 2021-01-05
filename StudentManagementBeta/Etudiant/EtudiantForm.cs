@@ -39,6 +39,7 @@ namespace StudentManagementBeta.Etudiant
 
         private void AjouterEtudiant_Click(object sender, EventArgs e)
         {
+            
             string CNE = inputCNEEtudiant.Text;
             string nom = inputNomEtudiant.Text;
             string prenom = inputPrenomEtudiant.Text;
@@ -47,11 +48,24 @@ namespace StudentManagementBeta.Etudiant
             string adresse = inputAdresseEtudiant.Text;
             string tele = inputTeleEtudiant.Text;
             int id_filiere = comboBox();
-            EtudiantModel etudiant = new EtudiantModel(CNE,nom,prenom,sexe,date,adresse,tele,id_filiere);
-            int x = etudaiantService.insert(etudiant);
-            MessageBox.Show(x + "est ligne ajoutée");
-            
 
+            try
+            {
+                EtudiantModel etudiant = new EtudiantModel(CNE,nom,prenom,sexe,date,adresse,tele,id_filiere);
+                int x = etudaiantService.insert(etudiant);
+                MessageBox.Show(x + "est ligne ajoutée");
+            }catch(Exception ex)
+            {
+                MessageBox.Show("ERROR");
+            }
+        }
+        private bool checkInfo(string CNE, string nom, string prenom, string sexe, string date, string adresse, string tele, int id_filiere)
+        {
+            if (CNE.Equals(string.Empty) && prenom.Equals(string.Empty) && nom.Equals(string.Empty) && sexe.Equals(string.Empty) && date.Equals(string.Empty) && adresse.Equals(string.Empty) && tele.Equals(string.Empty) && id_filiere.Equals(string.Empty))
+            {
+                return false;
+            }
+             return true;
         }
         private String CheckedSexe()
         {
@@ -60,6 +74,7 @@ namespace StudentManagementBeta.Etudiant
             else
                 return "H";
         }
+        
         private int comboBox()
         {
             string filiere = comboBox1.Text;

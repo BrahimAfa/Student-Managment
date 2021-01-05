@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Core.Database
 {
-  public interface IDAO<T>
-  {
-    int insert(T data);
-    bool update(T data);
-    void delete(int id);
-    T get(int id);
-    DataTable getAll();
-    bool insertMany(List<T> data);
-  }
+      public interface IDAO<T>
+      {
+            int insert(T data);
+            bool update(T data);
+            void delete(int id);
+            T get(int id);
+            DataTable getAll();
+            bool insertMany(List<T> data);
+      }
 }

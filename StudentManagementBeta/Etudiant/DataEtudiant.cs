@@ -38,23 +38,7 @@ namespace StudentManagementBeta.Etudiant
 
         private void TriDecroissant_Click(object sender, EventArgs e)
         {
-            List<EtudiantModel> l = new List<EtudiantModel>();
-            DataTable dt = etudaiantService.getAll();
-            
-            foreach (DataRow row1 in dt.Rows)
-            {
-                int id = Int32.Parse(row1[0].ToString());
-                String cne = row1[1].ToString();
-                String firstName = row1[2].ToString();
-                String lastName = row1[3].ToString();
-                String gender = row1[4].ToString();
-                //DateTime dob = DateTime.Parse(row1[5].ToString());
-                String adresse = row1[6].ToString();
-                String tele = row1[7].ToString();
-                String filiere = row1[8].ToString();
-                //l.Add(new EtudiantModel(id,cne, firstName, lastName,gender,dob,adresse,tele, filiere));
-            }
-            l.Sort();
+           
         }
         int position = -1;
         int idTable = -1;
