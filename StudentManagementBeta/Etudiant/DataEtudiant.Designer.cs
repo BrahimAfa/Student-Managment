@@ -30,19 +30,11 @@ namespace StudentManagementBeta.Etudiant
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataEtudiant));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.CNE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tele = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Filiere = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TableDataEtud = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -55,100 +47,52 @@ namespace StudentManagementBeta.Etudiant
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TableDataEtud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.bunifuCustomDataGrid1);
+            this.panel1.Controls.Add(this.TableDataEtud);
             this.panel1.Location = new System.Drawing.Point(16, 126);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(880, 358);
             this.panel1.TabIndex = 0;
             // 
-            // bunifuCustomDataGrid1
+            // TableDataEtud
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.White;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.bunifuCustomDataGrid1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CNE,
-            this.Nom,
-            this.Prenom,
-            this.Sexe,
-            this.DOB,
-            this.Adresse,
-            this.Tele,
-            this.Filiere});
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(880, 358);
-            this.bunifuCustomDataGrid1.TabIndex = 0;
-            // 
-            // CNE
-            // 
-            this.CNE.HeaderText = "CNE";
-            this.CNE.Name = "CNE";
-            // 
-            // Nom
-            // 
-            this.Nom.HeaderText = "Nom";
-            this.Nom.Name = "Nom";
-            // 
-            // Prenom
-            // 
-            this.Prenom.HeaderText = "Prénom";
-            this.Prenom.Name = "Prenom";
-            // 
-            // Sexe
-            // 
-            this.Sexe.HeaderText = "Sexe";
-            this.Sexe.Name = "Sexe";
-            // 
-            // DOB
-            // 
-            this.DOB.HeaderText = "Date de naissance";
-            this.DOB.Name = "DOB";
-            // 
-            // Adresse
-            // 
-            this.Adresse.HeaderText = "Adresse";
-            this.Adresse.Name = "Adresse";
-            // 
-            // Tele
-            // 
-            this.Tele.HeaderText = "Téléphone";
-            this.Tele.Name = "Tele";
-            // 
-            // Filiere
-            // 
-            this.Filiere.HeaderText = "Filière";
-            this.Filiere.Name = "Filiere";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TableDataEtud.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.TableDataEtud.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TableDataEtud.BackgroundColor = System.Drawing.Color.White;
+            this.TableDataEtud.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TableDataEtud.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.TableDataEtud.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.TableDataEtud.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TableDataEtud.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.TableDataEtud.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TableDataEtud.DoubleBuffered = true;
+            this.TableDataEtud.EnableHeadersVisualStyles = false;
+            this.TableDataEtud.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
+            this.TableDataEtud.HeaderForeColor = System.Drawing.Color.White;
+            this.TableDataEtud.Location = new System.Drawing.Point(0, 0);
+            this.TableDataEtud.Name = "TableDataEtud";
+            this.TableDataEtud.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.TableDataEtud.Size = new System.Drawing.Size(880, 358);
+            this.TableDataEtud.TabIndex = 0;
+            this.TableDataEtud.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableDataEtud_CellContentClick);
             // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 8;
-            this.bunifuElipse1.TargetControl = this.bunifuCustomDataGrid1;
+            this.bunifuElipse1.TargetControl = this.TableDataEtud;
             // 
             // bunifuMaterialTextbox1
             // 
@@ -251,6 +195,7 @@ namespace StudentManagementBeta.Etudiant
             this.supprimerEtudiant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.supprimerEtudiant.Textcolor = System.Drawing.Color.White;
             this.supprimerEtudiant.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supprimerEtudiant.Click += new System.EventHandler(this.supprimerEtudiant_Click);
             // 
             // ChargerData
             // 
@@ -285,6 +230,7 @@ namespace StudentManagementBeta.Etudiant
             this.ChargerData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ChargerData.Textcolor = System.Drawing.Color.White;
             this.ChargerData.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChargerData.Click += new System.EventHandler(this.ChargerData_Click);
             // 
             // ModifierEtudiant
             // 
@@ -387,6 +333,7 @@ namespace StudentManagementBeta.Etudiant
             this.TriDecroissant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.TriDecroissant.Textcolor = System.Drawing.Color.White;
             this.TriDecroissant.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TriDecroissant.Click += new System.EventHandler(this.TriDecroissant_Click);
             // 
             // label1
             // 
@@ -432,7 +379,7 @@ namespace StudentManagementBeta.Etudiant
             this.Text = "DataEtudiant";
             this.Load += new System.EventHandler(this.DataEtudiant_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TableDataEtud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -442,15 +389,7 @@ namespace StudentManagementBeta.Etudiant
     #endregion
 
     private System.Windows.Forms.Panel panel1;
-    private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-    private System.Windows.Forms.DataGridViewTextBoxColumn CNE;
-    private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
-    private System.Windows.Forms.DataGridViewTextBoxColumn Prenom;
-    private System.Windows.Forms.DataGridViewTextBoxColumn Sexe;
-    private System.Windows.Forms.DataGridViewTextBoxColumn DOB;
-    private System.Windows.Forms.DataGridViewTextBoxColumn Adresse;
-    private System.Windows.Forms.DataGridViewTextBoxColumn Tele;
-    private System.Windows.Forms.DataGridViewTextBoxColumn Filiere;
+    private Bunifu.Framework.UI.BunifuCustomDataGrid TableDataEtud;
     private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
     private Bunifu.Framework.UI.BunifuFlatButton TriDecroissant;

@@ -6,43 +6,68 @@ using System.Threading.Tasks;
 using Core.Database;
 using StudentManagementBeta.Etudiant;
 using System.Data.SqlClient;
+using System.Data;
+
 namespace StudentManagementBeta.Services
 {
-  class EtudiantService : IDAO<EtudiantModel>
-  {
-    // public SqlCommand sqlcommand { get; set; }
-    public EtudiantService()
-    {
-    }
-    public bool delete(int id)
-    {
-      // SqlCommand sqlcommand = new SqlCommand("query",Connection.sqlConnection)
-      throw new NotImplementedException();
-    }
+      class EtudiantService : IDAO<EtudiantModel>
+      {
+            public EtudiantService()
+            {
+            }
+            public void delete(int id)
+            {
+                    Connection.open();
+                    string requete = "DELETE FROM Etudiant WHERE ID_Etudiant = @id ";
+                    SqlCommand cmd = new SqlCommand(requete, Connection.sqlConnection);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    int a = cmd.ExecuteNonQuery();
+                    Connection.close();
+            }
+            public EtudiantModel get(int id)
+            {
+              throw new NotImplementedException();
+            }
+            public DataTable getAll()
+            {
+                    SqlCommand cmd = new SqlCommand("SELECT * from Etudiant;", Connection.sqlConnection);
+                    Connection.open();
+                    DataTable dt = new DataTable("Etud");
+                    SqlDataReader rd = cmd.ExecuteReader();
+                    if (rd.HasRows == true)
+                    {
+                        dt.Load(rd);
+                        return dt;
+                    }
+                    return null;
+            }
+            public int insert(EtudiantModel data)
+            {
+                    Connection.open();
+                    String requete = "INSERT INTO Etudiant (CNE,FirstName,LastName,gender,DOB,adresse,tele,ID_filiere) Values(@CNE,@prenomEtudiant,@nomEtudiant,@sexeEtudiant,@DOBEtudiant,@adresseEtudiant,@teleEtudiant,@filiere) ";
+                    SqlCommand cmd = new SqlCommand(requete, Connection.sqlConnection);
+                    cmd.CommandText = requete;
+                    cmd.Parameters.AddWithValue("@id", data.id);
+                    cmd.Parameters.AddWithValue("@CNE", data.CNE);
+                    cmd.Parameters.AddWithValue("@prenomEtudiant", data.prenomEtudiant);
+                    cmd.Parameters.AddWithValue("@nomEtudiant", data.nomEtudiant);
+                    cmd.Parameters.AddWithValue("@sexeEtudiant", data.sexeEtudiant);
+                    cmd.Parameters.AddWithValue("@DOBEtudiant", data.DOBEtudiant);
+                    cmd.Parameters.AddWithValue("@adresseEtudiant", data.adresseEtudiant);
+                    cmd.Parameters.AddWithValue("@teleEtudiant", data.teleEtudiant);
+                    cmd.Parameters.AddWithValue("@filiere", data.id_filiere);
+                    int a = cmd.ExecuteNonQuery();
+                    Connection.close();
+                    return a; 
+            }
+            public bool insertMany(List<EtudiantModel> data)
+            {
+              throw new NotImplementedException();
+            }
 
-    public EtudiantModel get(int id)
-    {
-      throw new NotImplementedException();
-    }
-
-    public List<EtudiantModel> getAll()
-    {
-      throw new NotImplementedException();
-    }
-
-    public bool insert(EtudiantModel data)
-    {
-      throw new NotImplementedException();
-    }
-
-    public bool insertMany(List<EtudiantModel> data)
-    {
-      throw new NotImplementedException();
-    }
-
-    public bool update(EtudiantModel data)
-    {
-      throw new NotImplementedException();
-    }
-  }
+            public bool update(EtudiantModel data)
+            {
+              throw new NotImplementedException();
+            }
+      }
 }
