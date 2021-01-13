@@ -30,7 +30,7 @@ namespace StudentManagementBeta.Services
             }
             public DataTable getAll()
             {
-                    SqlCommand cmd = new SqlCommand("SELECT * from Etudiant;", Connection.sqlConnection);
+                    SqlCommand cmd = new SqlCommand("SELECT e.CNE,e.FirstName,e.LastName,e.gender,e.DOB,e.adresse,e.tele,f.FiliereName from Etudiant e,Filiere f where e.ID_Filiere=f.ID_Filiere;", Connection.sqlConnection);
                     Connection.open();
                     DataTable dt = new DataTable("Etud");
                     SqlDataReader rd = cmd.ExecuteReader();

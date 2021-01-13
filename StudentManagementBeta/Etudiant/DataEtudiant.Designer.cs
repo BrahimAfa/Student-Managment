@@ -36,7 +36,7 @@ namespace StudentManagementBeta.Etudiant
             this.panel1 = new System.Windows.Forms.Panel();
             this.TableDataEtud = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.search = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.AjouterEtudiant = new Bunifu.Framework.UI.BunifuFlatButton();
             this.supprimerEtudiant = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -94,25 +94,25 @@ namespace StudentManagementBeta.Etudiant
             this.bunifuElipse1.ElipseRadius = 8;
             this.bunifuElipse1.TargetControl = this.TableDataEtud;
             // 
-            // bunifuMaterialTextbox1
+            // search
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.HintText = "";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
-            this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(29, 77);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(850, 33);
-            this.bunifuMaterialTextbox1.TabIndex = 1;
-            this.bunifuMaterialTextbox1.Text = "Chercher un Etudiant ";
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.search.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.search.HintForeColor = System.Drawing.Color.Empty;
+            this.search.HintText = "";
+            this.search.isPassword = false;
+            this.search.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
+            this.search.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
+            this.search.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
+            this.search.LineThickness = 3;
+            this.search.Location = new System.Drawing.Point(29, 77);
+            this.search.Margin = new System.Windows.Forms.Padding(4);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(850, 33);
+            this.search.TabIndex = 1;
+            this.search.Text = "Chercher un Etudiant  par CNE";
+            this.search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuImageButton1
             // 
@@ -126,6 +126,7 @@ namespace StudentManagementBeta.Etudiant
             this.bunifuImageButton1.TabIndex = 8;
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // AjouterEtudiant
             // 
@@ -373,7 +374,7 @@ namespace StudentManagementBeta.Etudiant
             this.Controls.Add(this.ModifierEtudiant);
             this.Controls.Add(this.TriCroissant);
             this.Controls.Add(this.TriDecroissant);
-            this.Controls.Add(this.bunifuMaterialTextbox1);
+            this.Controls.Add(this.search);
             this.Controls.Add(this.panel1);
             this.Name = "DataEtudiant";
             this.Text = "DataEtudiant";
@@ -391,7 +392,7 @@ namespace StudentManagementBeta.Etudiant
     private System.Windows.Forms.Panel panel1;
     private Bunifu.Framework.UI.BunifuCustomDataGrid TableDataEtud;
     private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-    private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+    private Bunifu.Framework.UI.BunifuMaterialTextbox search;
     private Bunifu.Framework.UI.BunifuFlatButton TriDecroissant;
     private Bunifu.Framework.UI.BunifuFlatButton TriCroissant;
     private Bunifu.Framework.UI.BunifuFlatButton ModifierEtudiant;
