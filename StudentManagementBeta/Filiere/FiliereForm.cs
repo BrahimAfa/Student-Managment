@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using Core.Database;
+using StudentManagementBeta.Services;
 
 namespace StudentManagementBeta.Filiere
 {
@@ -16,10 +19,32 @@ namespace StudentManagementBeta.Filiere
     {
       InitializeComponent();
     }
+        FiliereService fil = new FiliereService();
+       
+        private void FormFiliere_Load(object sender, EventArgs e)
+        {
+            this.dgvFiliere.DataSource =fil.getAll();
+        }
 
-    private void FormFiliere_Load(object sender, EventArgs e)
-    {
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            int position = this.dgvFiliere.CurrentRow.Index;
+            int id = int.Parse(this.dgvFiliere.Rows[position].Cells[0].Value.ToString());
+            fil.delete(id);
+            this.dgvFiliere.DataSource = fil.getAll();
+
+    }
+
+    private void btnAjouterFiliere_Click(object sender, EventArgs e)
+        {
+            string nom = this.textBoxNomFiliere.Text;
+            fil.insert(nom);
+            this.dgvFiliere.DataSource = fil.getAll();
     }
   }
 }

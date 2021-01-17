@@ -22,6 +22,7 @@ namespace Core.Database
 
     public static void open()
     {
+            Console.WriteLine(sqlConnection.State);
       if (sqlConnection.State != System.Data.ConnectionState.Open)
       {
         sqlConnection.Open();
