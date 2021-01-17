@@ -100,5 +100,38 @@
       dv.Sort = $"FirstName {sortcondition}";
       return dv.ToTable();
     }
+
+    private void ModifierEtudiant_Click(object sender, EventArgs e)
+    {
+      if (position == -1)
+      {
+        MessageBox.Show("veuillez SVP selectionner une ligne !!");
+        return;
+      }
+      EtudiantModel etud = etudaiantService.get(idTable);
+      EtudiantForm etdFrm = new EtudiantForm(true, etud);
+      etdFrm.refreshGridRegister += new EtudiantForm.GridRefrecher(updateEtudiant);
+      etdFrm.ShowDialog();
+    }
+    public void updateEtudiant(EtudiantModel etudiant)
+    {
+      try
+      {
+        if (etudaiantService.update(etudiant))
+        {
+
+          MessageBox.Show("Etudiant bien modifier");
+          TableDataEtud.DataSource = etudaiantService.getAll();
+          return;
+        }
+        MessageBox.Show("ERROR...");
+
+
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show($"ERROR :: {ex.Message}");
+      }
+    }
   }
 }

@@ -8,22 +8,43 @@
   public partial class EtudiantForm : Form
   {
     internal Services.EtudiantService etudaiantService = new Services.EtudiantService();
+    internal Services.FiliereService filiereService = new Services.FiliereService();
 
     public delegate void GridRefrecher(EtudiantModel etd);
 
     public event GridRefrecher refreshGridRegister;
+    private bool isUpdate { get; set; }
+    private EtudiantModel updateEtud { get; set; }
 
-    public EtudiantForm()
+    public EtudiantForm(bool isUpdate=false,EtudiantModel updateEtud=null)
     {
       InitializeComponent();
-      SqlCommand cmd = new SqlCommand("SELECT FiliereName from Filiere;", Connection.sqlConnection);
-      Connection.open();
-      SqlDataReader read = cmd.ExecuteReader();
-      while (read.Read())
+      fillFiliereCombo();
+      this.isUpdate = isUpdate;
+      this.updateEtud = updateEtud;
+      if (isUpdate)
       {
-        comboBox1.Items.Add(read.GetString(0));
+        if (updateEtud == null)
+        {
+          throw new Exception("Etudiant is required in case of an update");
+        }
+        fillInputsWithUpdateEtude(updateEtud);
+        this.AjouterEtudiant.Text = "Modifier";
+        this.ImporterExcel.Visible = false;
+        this.Text = "Modifier Etudiant";
       }
-      Connection.close();
+    }
+
+    private void fillInputsWithUpdateEtude(EtudiantModel updateEtud)
+    {
+        inputCNEEtudiant.Text = updateEtud.CNE;
+        inputNomEtudiant.Text = updateEtud.nomEtudiant;
+        inputPrenomEtudiant.Text = updateEtud.prenomEtudiant;
+        selectSexe(updateEtud.sexeEtudiant);
+        bunifuDatepicker1.Value = Convert.ToDateTime(updateEtud.DOBEtudiant);
+        inputAdresseEtudiant.Text = updateEtud.adresseEtudiant;
+        inputTeleEtudiant.Text = updateEtud.teleEtudiant;
+      comboBox1.SelectedValue = updateEtud.id_filiere;
     }
 
     private void Form_Etudiant_Load(object sender, EventArgs e)
@@ -37,17 +58,7 @@
 
     private void AjouterEtudiant_Click(object sender, EventArgs e)
     {
-
-      string CNE = inputCNEEtudiant.Text;
-      string nom = inputNomEtudiant.Text;
-      string prenom = inputPrenomEtudiant.Text;
-      string sexe = CheckedSexe();
-      string date = bunifuDatepicker1.Text;
-      string adresse = inputAdresseEtudiant.Text;
-      string tele = inputTeleEtudiant.Text;
-      int id_filiere = comboBox();
-      EtudiantModel etudiant = new EtudiantModel(CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
-
+      EtudiantModel etudiant = getEtudiantFromInputs();
       refreshGridRegister(etudiant);
     }
 
@@ -71,25 +82,33 @@
         return "H";
       }
     }
-
-    private int comboBox()
+    private void selectSexe(string sexe)
     {
-      string filiere = comboBox1.Text;
-      SqlCommand comm = new SqlCommand("SELECT ID_Filiere from Filiere WHERE FiliereName = @filiere;", Connection.sqlConnection);
-      comm.Parameters.AddWithValue("@filiere", filiere);
-      Connection.open();
-      SqlDataReader dr = comm.ExecuteReader();
-      int x = -1;
-      if (dr.Read())
-      {
-        x = (int)dr["ID_Filiere"];
-      }
-      Connection.close();
-      return x;
+      Femme.Checked = sexe == "F";
+      Homme.Checked = !Femme.Checked;
     }
 
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
+    }
+    void fillFiliereCombo()
+    {
+      comboBox1.DataSource = filiereService.getAll();
+      comboBox1.ValueMember = "ID_Filiere";
+      comboBox1.DisplayMember = "FiliereName";
+    }
+    EtudiantModel getEtudiantFromInputs()
+    {
+      string CNE = inputCNEEtudiant.Text;
+      string nom = inputNomEtudiant.Text;
+      string prenom = inputPrenomEtudiant.Text;
+      string sexe = CheckedSexe();
+      string date = bunifuDatepicker1.Text;
+      string adresse = inputAdresseEtudiant.Text;
+      string tele = inputTeleEtudiant.Text;
+      int id_filiere = int.Parse(comboBox1.SelectedValue.ToString());
+      return new EtudiantModel(this.updateEtud.id,CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
+
     }
   }
 }

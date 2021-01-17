@@ -41,6 +41,29 @@
       return notFoundDT();
     }
 
+    public EtudiantModel get(int id)
+    {
+
+      SqlCommand cmd = new SqlCommand("SELECT *  FROM Etudiant where ID_Etudiant=@id", Connection.sqlConnection);
+      cmd.Parameters.AddWithValue("@id", id);
+      Connection.open();
+      SqlDataReader dr = cmd.ExecuteReader();
+      dr.Read();
+      if (!dr.HasRows) return null;
+      int idEtud = int.Parse(dr[0].ToString());
+      string CNE = dr[1].ToString();
+      string nom = dr[2].ToString();
+      string prenom = dr[3].ToString();
+      string sexe = dr[4].ToString();
+      string date = dr[5].ToString();
+      string adresse = dr[6].ToString();
+      string tele = dr[7].ToString();
+      int id_filiere = int.Parse(dr[9].ToString());
+      EtudiantModel etud  =  new EtudiantModel(idEtud,CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
+      Connection.close();
+      return etud;
+    }
+
     public DataTable getAll()
     {
       SqlCommand cmd = new SqlCommand("SELECT e.*,f.FiliereName from Etudiant e,Filiere f where e.ID_Filiere=f.ID_Filiere;", Connection.sqlConnection);
@@ -85,7 +108,21 @@
 
     public bool update(EtudiantModel data)
     {
-      throw new NotImplementedException();
+      string requete = "update Etudiant set CNE=@CNE,FirstName=@prenomEtudiant,LastName=@nomEtudiant,gender=@sexeEtudiant,DOB=@DOBEtudiant,adresse=@adresseEtudiant,tele=@teleEtudiant,ID_filiere=@filiere where ID_Etudiant=@id";
+      SqlCommand cmd = new SqlCommand(requete, Connection.sqlConnection);
+      cmd.Parameters.AddWithValue("@id", data.id);
+      cmd.Parameters.AddWithValue("@CNE", data.CNE);
+      cmd.Parameters.AddWithValue("@prenomEtudiant", data.prenomEtudiant);
+      cmd.Parameters.AddWithValue("@nomEtudiant", data.nomEtudiant);
+      cmd.Parameters.AddWithValue("@sexeEtudiant", data.sexeEtudiant);
+      cmd.Parameters.AddWithValue("@DOBEtudiant", data.DOBEtudiant);
+      cmd.Parameters.AddWithValue("@adresseEtudiant", data.adresseEtudiant);
+      cmd.Parameters.AddWithValue("@teleEtudiant", data.teleEtudiant);
+      cmd.Parameters.AddWithValue("@filiere", data.id_filiere);
+      Connection.open();
+      int a = cmd.ExecuteNonQuery();
+      Connection.close();
+      return a > 0;
     }
 
     internal DataTable notFoundDT()

@@ -39,6 +39,11 @@
       return null;
     }
 
+    public object get(int id)
+    {
+      throw new NotImplementedException();
+    }
+
     public DataTable getAll()
     {
       string query = "SELECT * FROM Filiere";
