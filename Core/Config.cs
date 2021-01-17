@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace Core
 {
   class Config {
-    public static string CONNECTION_STRING = @"Data Source=DESKTOP-LB4BGFM\SQLEXPRESS;Initial Catalog=GestionEtudiant;Integrated Security=True";
-  }
+    public static string CONNECTION_STRING = @"Data Source=DESKTOP-GK7J0IJ\SQLEXPRESS;Initial Catalog=GestionEtudiant;Integrated Security=True";
+    }
 }
