@@ -19,6 +19,7 @@ namespace StudentManagementBeta.Statistics
 
             Services.FiliereService filiereService = new Services.FiliereService();
             Services.EtudiantService etudiantService = new Services.EtudiantService();
+            //sjsjs
 
             DataTable dataFiliere = filiereService.getAll();
             DataTable dataEtudiant = etudiantService.getAll();
