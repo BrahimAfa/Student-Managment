@@ -8,6 +8,6 @@ using System.Data.SqlClient;
 namespace Core
 {
   static class Config {
-    public static string CONNECTION_STRING = @"Data Source=DESKTOP-GFRQLGV\SQLEXPRESS;Initial Catalog=GestionEtudiant;Integrated Security=True";
+    public static string CONNECTION_STRING = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=GestionEtudiant;Integrated Security=True";
   }
 }

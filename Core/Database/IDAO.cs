@@ -9,9 +9,9 @@ namespace Core.Database
 {
       public interface IDAO<T>
       {
-            int insert(T data);
+            bool insert(T data);
             bool update(T data);
-            void delete(object id);
+            bool delete(object id);
             DataTable get(object id);
             DataTable getAll();
             bool insertMany(List<T> data);

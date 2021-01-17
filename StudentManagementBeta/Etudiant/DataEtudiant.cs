@@ -1,8 +1,9 @@
 ﻿namespace StudentManagementBeta.Etudiant
 {
   using System;
-  using System.Windows.Forms;
   using System.Data;
+  using System.Windows.Forms;
+
   public partial class DataEtudiant : Form
   {
     internal Services.EtudiantService etudaiantService = new Services.EtudiantService();
@@ -33,6 +34,7 @@
     {
       TableDataEtud.DataSource = sortbyFirstName("desc");
     }
+
     private void TriCroissant_Click(object sender, EventArgs e)
     {
       TableDataEtud.DataSource = sortbyFirstName("asc");
@@ -69,9 +71,15 @@
     {
       try
       {
-        int x = etudaiantService.insert(etudiant);
-        MessageBox.Show(x + "est ligne ajoutée");
-        TableDataEtud.DataSource = etudaiantService.getAll();
+        if (etudaiantService.insert(etudiant))
+        {
+
+          MessageBox.Show("Etudiant bien ajoutée");
+          TableDataEtud.DataSource = etudaiantService.getAll();
+          return;
+        }
+        MessageBox.Show("ERROR...");
+
 
       }
       catch (Exception ex)
@@ -79,15 +87,18 @@
         MessageBox.Show($"ERROR :: {ex.Message}");
       }
     }
-    DataTable sortbyFirstName(string sortcondition)
+
+    internal DataTable sortbyFirstName(string sortcondition)
     {
       DataTable dt = (DataTable)TableDataEtud.DataSource;
-      if (dt == null) return null;
+      if (dt == null)
+      {
+        return null;
+      }
+
       DataView dv = dt.DefaultView;
       dv.Sort = $"FirstName {sortcondition}";
       return dv.ToTable();
     }
-
- 
   }
 }

@@ -13,7 +13,7 @@
     {
     }
 
-    public void delete(object id)
+    public bool delete(object id)
     {
       Connection.open();
       string requete = "DELETE FROM Etudiant WHERE ID_Etudiant = @id ";
@@ -21,12 +21,13 @@
       cmd.Parameters.AddWithValue("@id", id);
       int a = cmd.ExecuteNonQuery();
       Connection.close();
+      return a > 0;
     }
 
     public DataTable get(object id)
     {
-      SqlCommand cmd = new SqlCommand("SELECT e.*,f.FiliereName from Etudiant e,Filiere f where e.ID_Filiere=f.ID_Filiere and e.CNE=@cne", Connection.sqlConnection);
-      cmd.Parameters.AddWithValue("@cne", id);
+      SqlCommand cmd = new SqlCommand("SELECT e.*,f.FiliereName from Etudiant e,Filiere f where e.ID_Filiere=f.ID_Filiere and e.CNE like @cne", Connection.sqlConnection);
+      cmd.Parameters.AddWithValue("@cne", $"%{id}%");
 
       Connection.open();
       DataTable dt = new DataTable("Etud");
@@ -55,7 +56,7 @@
       return notFoundDT();
     }
 
-    public int insert(EtudiantModel data)
+    public bool insert(EtudiantModel data)
     {
       Connection.open();
       string requete = "INSERT INTO Etudiant (CNE,FirstName,LastName,gender,DOB,adresse,tele,ID_filiere) Values(@CNE,@prenomEtudiant,@nomEtudiant,@sexeEtudiant,@DOBEtudiant,@adresseEtudiant,@teleEtudiant,@filiere) ";
@@ -74,7 +75,7 @@
       cmd.Parameters.AddWithValue("@filiere", data.id_filiere);
       int a = cmd.ExecuteNonQuery();
       Connection.close();
-      return a;
+      return a>0;
     }
 
     public bool insertMany(List<EtudiantModel> data)
