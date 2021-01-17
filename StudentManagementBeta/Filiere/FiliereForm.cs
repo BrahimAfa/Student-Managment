@@ -36,17 +36,15 @@ namespace StudentManagementBeta.Filiere
             int position = this.dgvFiliere.CurrentRow.Index;
             int id = int.Parse(this.dgvFiliere.Rows[position].Cells[0].Value.ToString());
             fil.delete(id);
-            this.dgvFiliere.Rows.RemoveAt(position);
-            MessageBox.Show("La ligne a été supprimé .");
-            
-            
-        }
+            this.dgvFiliere.DataSource = fil.getAll();
 
-        private void btnAjouterFiliere_Click(object sender, EventArgs e)
+    }
+
+    private void btnAjouterFiliere_Click(object sender, EventArgs e)
         {
             string nom = this.textBoxNomFiliere.Text;
             fil.insert(nom);
-           // this.dgvFiliere.Rows.Add()
-        }
+            this.dgvFiliere.DataSource = fil.getAll();
     }
+  }
 }

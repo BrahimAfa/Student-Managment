@@ -14,7 +14,7 @@ namespace StudentManagementBeta.Services
         public bool delete(int id)
         {
             bool aide = true;
-            string query = "DELETE * FROM Filiere WHERE Id_Filiere=@id";
+            string query = "DELETE FROM Filiere WHERE Id_Filiere=@id";
             SqlConnection conn = Connection.sqlConnection;
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id", id);
@@ -84,7 +84,7 @@ namespace StudentManagementBeta.Services
             }
             catch (SqlException ex)
             {
-                Console.WriteLine(ex.Message);
+        System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
 
