@@ -11,8 +11,8 @@ namespace Core.Database
       {
             int insert(T data);
             bool update(T data);
-            void delete(int id);
-            T get(int id);
+            void delete(object id);
+            DataTable get(object id);
             DataTable getAll();
             bool insertMany(List<T> data);
       }

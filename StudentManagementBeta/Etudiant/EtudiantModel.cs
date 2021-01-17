@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudentManagementBeta.Etudiant
 {
-  class EtudiantModel
+  public class EtudiantModel
     {
         public int id;
         public string CNE;
