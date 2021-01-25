@@ -134,5 +134,28 @@
       dt.Rows.Add(dr);
       return dt;
     }
-  }
+
+     public EtudiantModel getByCNE(string cne)
+      {
+
+            SqlCommand cmd = new SqlCommand("SELECT *  FROM Etudiant where CNE=@cne", Connection.sqlConnection);
+            cmd.Parameters.AddWithValue("@cne", cne);
+            Connection.open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            if (!dr.HasRows) return null;
+            int idEtud = int.Parse(dr["ID_Etudiant"].ToString());
+            string CNE = dr["CNE"].ToString();
+            string nom = dr["LastName"].ToString();
+            string prenom = dr["FirstName"].ToString();
+            string sexe = dr["gender"].ToString();
+            string date = String.Format("{0:d/M/yyyy }", dr["DOB"]);
+            string adresse = dr["adresse"].ToString();
+            string tele = dr["tele"].ToString();
+            int id_filiere = int.Parse(dr["ID_Filiere"].ToString());
+            EtudiantModel etud = new EtudiantModel(idEtud, CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
+            Connection.close();
+            return etud;
+        }
+    }
 }

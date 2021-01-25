@@ -100,5 +100,18 @@
     {
       throw new NotImplementedException();
     }
+
+    public string getFiliereName(int id)
+    {
+            SqlCommand cmd = new SqlCommand("SELECT *  FROM Filiere where ID_Filiere=@id", Connection.sqlConnection);
+            cmd.Parameters.AddWithValue("@id", id);
+            Connection.open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            if (!dr.HasRows) return null;
+            string fiereName=  dr[1].ToString();
+            Connection.close();
+            return fiereName;
+        }
   }
 }
