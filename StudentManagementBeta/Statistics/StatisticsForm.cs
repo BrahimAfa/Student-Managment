@@ -43,7 +43,7 @@ namespace StudentManagementBeta.Statistics
             foreach(KeyValuePair<string, int> kvp in nbEtudiantFiliere)
             {
                 this.chart1.Series["NombreEtudiant"].Points.AddXY(kvp.Key, kvp.Value);
-                this.chart1.Series["NombreEtudiant"].Points[k].Label = Math.Round(kvp.Value / nbTotalEtudiant, 2) + "%";
+                this.chart1.Series["NombreEtudiant"].Points[k].Label = Math.Round((kvp.Value / nbTotalEtudiant)*100, 2) + "%";
                 k++;
             }
            
