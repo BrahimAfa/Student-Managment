@@ -107,8 +107,8 @@
       string adresse = inputAdresseEtudiant.Text;
       string tele = inputTeleEtudiant.Text;
       int id_filiere = int.Parse(comboBox1.SelectedValue.ToString());
-      return new EtudiantModel(this.updateEtud.id,CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
-
+      if (this.updateEtud != null) return new EtudiantModel(this.updateEtud.id,CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
+      return new EtudiantModel(CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
     }
   }
 }
