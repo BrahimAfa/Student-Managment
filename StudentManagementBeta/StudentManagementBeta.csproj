@@ -71,6 +71,9 @@
     <Compile Include="Etudiant\ImportForm.Designer.cs">
       <DependentUpon>ImportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Etudiant\TransparentPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Etudiant\Validation.cs" />
     <Compile Include="Filiere\FiliereForm.cs">
       <SubType>Form</SubType>
@@ -194,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\icons8_menu_50px_2.png" />
+    <None Include="Resources\Loader.gif" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
