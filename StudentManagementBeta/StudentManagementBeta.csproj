@@ -90,6 +90,11 @@
       <DependentUpon>ImportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Etudiant\Validation.cs" />
+    <Compile Include="filiere.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>filiere.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Filiere\FiliereForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +109,11 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionEtudiantDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestionEtudiantDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="myResouces.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -111,6 +121,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\printAllForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\printAllForm.Designer.cs">
+      <DependentUpon>printAllForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\Print__Etudiant_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,16 +179,42 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reporting\printAllForm.resx">
+      <DependentUpon>printAllForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporting\Print__Etudiant_Form.resx">
       <DependentUpon>Print__Etudiant_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporting\Rapport_etudiant.rdlc" />
+    <EmbeddedResource Include="Reporting\REPORTALL.rdlc" />
     <EmbeddedResource Include="Reporting\ReportingForm.resx">
       <DependentUpon>ReportingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="filiere.xsc">
+      <DependentUpon>filiere.xsd</DependentUpon>
+    </None>
+    <None Include="filiere.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>filiere.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="filiere.xss">
+      <DependentUpon>filiere.xsd</DependentUpon>
+    </None>
+    <None Include="GestionEtudiantDataSet.xsc">
+      <DependentUpon>GestionEtudiantDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GestionEtudiantDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GestionEtudiantDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GestionEtudiantDataSet.xss">
+      <DependentUpon>GestionEtudiantDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

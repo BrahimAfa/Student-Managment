@@ -51,7 +51,7 @@ namespace StudentManagementBeta.Reporting
 
         private void buttonAllStudent_Click(object sender, EventArgs e)
         {
-
+            new printAllForm().ShowDialog();
         }
     }
 }
