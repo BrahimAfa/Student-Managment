@@ -89,6 +89,9 @@
     <Compile Include="Etudiant\ImportForm.Designer.cs">
       <DependentUpon>ImportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Etudiant\TransparentPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Etudiant\Validation.cs" />
     <Compile Include="filiere.Designer.cs">
       <AutoGen>True</AutoGen>
