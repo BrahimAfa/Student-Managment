@@ -288,9 +288,7 @@ namespace StudentManagementBeta {
             private global::System.Data.DataColumn columnFirstName;
             
             private global::System.Data.DataColumn columnCNE;
-            
-            private global::System.Data.DataColumn columnCNI;
-            
+                        
             private global::System.Data.DataColumn columnDOB;
             
             private global::System.Data.DataColumn columngender;
@@ -299,7 +297,6 @@ namespace StudentManagementBeta {
             
             private global::System.Data.DataColumn columnadresse;
             
-            private global::System.Data.DataColumn columnage;
             
             private global::System.Data.DataColumn columnFiliereName;
             
@@ -376,13 +373,6 @@ namespace StudentManagementBeta {
                 }
             }
             
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CNIColumn {
-                get {
-                    return this.columnCNI;
-                }
-            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -416,13 +406,6 @@ namespace StudentManagementBeta {
                 }
             }
             
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ageColumn {
-                get {
-                    return this.columnage;
-                }
-            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -469,7 +452,7 @@ namespace StudentManagementBeta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public etud_filRow Addetud_filRow(int ID_Etudiant, int ID_Filiere, string LastName, string FirstName, string CNE, string CNI, System.DateTime DOB, string gender, string tele, string adresse, int age, string FiliereName) {
+            public etud_filRow Addetud_filRow(int ID_Etudiant, int ID_Filiere, string LastName, string FirstName, string CNE, System.DateTime DOB, string gender, string tele, string adresse, string FiliereName) {
                 etud_filRow rowetud_filRow = ((etud_filRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_Etudiant,
@@ -477,12 +460,11 @@ namespace StudentManagementBeta {
                         LastName,
                         FirstName,
                         CNE,
-                        CNI,
                         DOB,
                         gender,
                         tele,
                         adresse,
-                        age,
+
                         FiliereName};
                 rowetud_filRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowetud_filRow);
@@ -518,12 +500,10 @@ namespace StudentManagementBeta {
                 this.columnLastName = base.Columns["LastName"];
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnCNE = base.Columns["CNE"];
-                this.columnCNI = base.Columns["CNI"];
                 this.columnDOB = base.Columns["DOB"];
                 this.columngender = base.Columns["gender"];
                 this.columntele = base.Columns["tele"];
                 this.columnadresse = base.Columns["adresse"];
-                this.columnage = base.Columns["age"];
                 this.columnFiliereName = base.Columns["FiliereName"];
             }
             
@@ -540,8 +520,6 @@ namespace StudentManagementBeta {
                 base.Columns.Add(this.columnFirstName);
                 this.columnCNE = new global::System.Data.DataColumn("CNE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCNE);
-                this.columnCNI = new global::System.Data.DataColumn("CNI", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCNI);
                 this.columnDOB = new global::System.Data.DataColumn("DOB", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDOB);
                 this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
@@ -550,8 +528,6 @@ namespace StudentManagementBeta {
                 base.Columns.Add(this.columntele);
                 this.columnadresse = new global::System.Data.DataColumn("adresse", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnadresse);
-                this.columnage = new global::System.Data.DataColumn("age", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnage);
                 this.columnFiliereName = new global::System.Data.DataColumn("FiliereName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFiliereName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -564,8 +540,6 @@ namespace StudentManagementBeta {
                 this.columnFirstName.MaxLength = 50;
                 this.columnCNE.AllowDBNull = false;
                 this.columnCNE.MaxLength = 15;
-                this.columnCNI.AllowDBNull = false;
-                this.columnCNI.MaxLength = 15;
                 this.columngender.MaxLength = 20;
                 this.columntele.MaxLength = 20;
                 this.columnadresse.MaxLength = 250;
@@ -770,17 +744,7 @@ namespace StudentManagementBeta {
                     this[this.tableetud_fil.CNEColumn] = value;
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CNI {
-                get {
-                    return ((string)(this[this.tableetud_fil.CNIColumn]));
-                }
-                set {
-                    this[this.tableetud_fil.CNIColumn] = value;
-                }
-            }
+ 
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -846,21 +810,6 @@ namespace StudentManagementBeta {
                 }
             }
             
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int age {
-                get {
-                    try {
-                        return ((int)(this[this.tableetud_fil.ageColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'age\' in table \'etud_fil\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableetud_fil.ageColumn] = value;
-                }
-            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -932,18 +881,8 @@ namespace StudentManagementBeta {
             public void SetadresseNull() {
                 this[this.tableetud_fil.adresseColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsageNull() {
-                return this.IsNull(this.tableetud_fil.ageColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetageNull() {
-                this[this.tableetud_fil.ageColumn] = global::System.Convert.DBNull;
-            }
+
+           
         }
         
         /// <summary>
@@ -1110,12 +1049,10 @@ namespace StudentManagementBeta.filiereTableAdapters {
             tableMapping.ColumnMappings.Add("LastName", "LastName");
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("CNE", "CNE");
-            tableMapping.ColumnMappings.Add("CNI", "CNI");
             tableMapping.ColumnMappings.Add("DOB", "DOB");
             tableMapping.ColumnMappings.Add("gender", "gender");
             tableMapping.ColumnMappings.Add("tele", "tele");
             tableMapping.ColumnMappings.Add("adresse", "adresse");
-            tableMapping.ColumnMappings.Add("age", "age");
             tableMapping.ColumnMappings.Add("FiliereName", "FiliereName");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -1124,7 +1061,7 @@ namespace StudentManagementBeta.filiereTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::StudentManagementBeta.Properties.Settings.Default.GestionEtudiantConnectionString;
+            this._connection.ConnectionString = global::Core.Config.getConnection();
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1133,8 +1070,8 @@ namespace StudentManagementBeta.filiereTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Etudiant, ID_Filiere, LastName, FirstName, CNE, CNI, DOB, gender, tele," +
-                " adresse, age, FiliereName FROM dbo.etud_fil";
+            this._commandCollection[0].CommandText = "SELECT ID_Etudiant, ID_Filiere, LastName, FirstName, CNE, DOB, gender, tele," +
+                " adresse, FiliereName FROM dbo.etud_fil";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Core
 {
-  class Config {
+  public class Config {
     public static string getConnection()
     {
         SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
