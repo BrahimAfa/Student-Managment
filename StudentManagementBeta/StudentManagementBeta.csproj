@@ -34,13 +34,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Compressed\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,10 +89,12 @@
     <Compile Include="Etudiant\ImportForm.Designer.cs">
       <DependentUpon>ImportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Etudiant\TransparentPictureBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Etudiant\Validation.cs" />
+    <Compile Include="filiere.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>filiere.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Filiere\FiliereForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +109,11 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionEtudiantDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestionEtudiantDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="myResouces.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +121,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\printAllForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\printAllForm.Designer.cs">
+      <DependentUpon>printAllForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\Print__Etudiant_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\Print__Etudiant_Form.Designer.cs">
+      <DependentUpon>Print__Etudiant_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\ReportingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +142,9 @@
     <Compile Include="Reporting\Validation.cs" />
     <Compile Include="Services\EtudiantService.cs" />
     <Compile Include="Services\FiliereService.cs" />
+    <Compile Include="Services\ReportingService.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Statistics\StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,12 +180,43 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reporting\printAllForm.resx">
+      <DependentUpon>printAllForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\Print__Etudiant_Form.resx">
+      <DependentUpon>Print__Etudiant_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\Rapport_etudiant.rdlc" />
+    <EmbeddedResource Include="Reporting\REPORTALL.rdlc" />
     <EmbeddedResource Include="Reporting\ReportingForm.resx">
       <DependentUpon>ReportingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="filiere.xsc">
+      <DependentUpon>filiere.xsd</DependentUpon>
+    </None>
+    <None Include="filiere.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>filiere.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="filiere.xss">
+      <DependentUpon>filiere.xsd</DependentUpon>
+    </None>
+    <None Include="GestionEtudiantDataSet.xsc">
+      <DependentUpon>GestionEtudiantDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GestionEtudiantDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GestionEtudiantDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GestionEtudiantDataSet.xss">
+      <DependentUpon>GestionEtudiantDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -196,8 +267,21 @@
     <None Include="Resources\icons8_search_96px_1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\ensa_logo.png" />
     <Content Include="Resources\icons8_menu_50px_2.png" />
-    <None Include="Resources\Loader.gif" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
