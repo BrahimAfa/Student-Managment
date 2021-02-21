@@ -101,6 +101,7 @@ namespace StudentManagementBeta.Etudiant
       this.TableDataEtud.RowsDefaultCellStyle = dataGridViewCellStyle4;
       this.TableDataEtud.Size = new System.Drawing.Size(880, 358);
       this.TableDataEtud.TabIndex = 0;
+      this.TableDataEtud.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableDataEtud_CellContentClick);
       this.TableDataEtud.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableDataEtud_CellContentClick);
       // 
       // bunifuElipse1

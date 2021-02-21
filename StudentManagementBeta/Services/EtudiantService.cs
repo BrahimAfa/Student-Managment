@@ -58,7 +58,7 @@
       string date = dr[5].ToString();
       string adresse = dr[6].ToString();
       string tele = dr[7].ToString();
-      int id_filiere = int.Parse(dr[9].ToString());
+      int id_filiere = int.Parse(dr[8].ToString());
       EtudiantModel etud  =  new EtudiantModel(idEtud,CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
       Connection.close();
       return etud;

@@ -59,11 +59,19 @@ namespace StudentManagementBeta.Etudiant
     }
     private async void AjouterEtudiant_Click(object sender, EventArgs e)
     {
-      pictureBox1.Show();
-      pictureBox1.Update();
-      var i= await Import(txtImport.Text, ",");
-      MessageBox.Show(i.ToString());
-      pictureBox1.Hide();
+      try
+      {
+        pictureBox1.Show();
+        pictureBox1.Update();
+        var i = await Import(txtImport.Text, ",");
+        MessageBox.Show(i.ToString());
+        pictureBox1.Hide();
+      }
+      catch(Exception ex)
+      {
+        Core.Utils.Helpers.showErrorMessage(ex.Message);
+      }
+ 
     }
 
     private Task<int> Import(string csvFilePath,string delimiter)

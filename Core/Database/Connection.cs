@@ -15,7 +15,7 @@ namespace Core.Database
     {
       get
       {
-        if (sqlCon is null) sqlCon = new SqlConnection(Config.CONNECTION_STRING);
+        if (sqlCon is null) sqlCon = new SqlConnection(Config.getConnection());
         return sqlCon;
       }
     }
