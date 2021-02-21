@@ -63,15 +63,19 @@ namespace StudentManagementBeta.Etudiant
       {
         pictureBox1.Show();
         pictureBox1.Update();
-        var i = await Import(txtImport.Text, ",");
+        var i = await Import(txtImport.Text, txtDelim.Text);
         MessageBox.Show(i.ToString());
-        pictureBox1.Hide();
       }
       catch(Exception ex)
       {
         Core.Utils.Helpers.showErrorMessage(ex.Message);
       }
- 
+      finally
+      {
+        pictureBox1.Hide();
+
+      }
+
     }
 
     private Task<int> Import(string csvFilePath,string delimiter)
@@ -81,14 +85,13 @@ namespace StudentManagementBeta.Etudiant
       {
         parser.TextFieldType = FieldType.Delimited;
         parser.SetDelimiters(delimiter);
+        parser.ReadFields(); // avoid Header.
         while (!parser.EndOfData)
         {
-          //Processing row
-          if (i == 0) continue;
+          i++;
           string[] fields = parser.ReadFields();
           EtudiantModel Etud = getEtudiantFromInputs(fields);
           etudaiantService.insert(Etud);
-          i++;
 
         }
       }
