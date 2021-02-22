@@ -29,9 +29,9 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
       this.panel1 = new System.Windows.Forms.Panel();
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -78,14 +78,14 @@
       // 
       // panel2
       // 
-      this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(186)))), ((int)(((byte)(255)))));
+      this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(225)))), ((int)(((byte)(231)))));
       this.panel2.Controls.Add(this.btnSupprimer);
       this.panel2.Controls.Add(this.btnModifier);
       this.panel2.Controls.Add(this.dgvFiliere);
       this.panel2.Controls.Add(this.groupBox1);
-      this.panel2.Location = new System.Drawing.Point(0, 34);
+      this.panel2.Location = new System.Drawing.Point(0, 37);
       this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(615, 578);
+      this.panel2.Size = new System.Drawing.Size(615, 442);
       this.panel2.TabIndex = 1;
       // 
       // btnSupprimer
@@ -168,18 +168,18 @@
       this.dgvFiliere.AllowUserToResizeColumns = false;
       this.dgvFiliere.AllowUserToResizeRows = false;
       this.dgvFiliere.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-      this.dgvFiliere.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+      this.dgvFiliere.BackgroundColor = System.Drawing.Color.WhiteSmoke;
       this.dgvFiliere.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.dgvFiliere.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
       this.dgvFiliere.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
-      dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-      dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.dgvFiliere.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvFiliere.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.dgvFiliere.ColumnHeadersHeight = 27;
       this.dgvFiliere.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
       this.dgvFiliere.EnableHeadersVisualStyles = false;
@@ -187,20 +187,20 @@
       this.dgvFiliere.Location = new System.Drawing.Point(156, 190);
       this.dgvFiliere.Name = "dgvFiliere";
       this.dgvFiliere.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-      dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-      dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
-      dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-      dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.dgvFiliere.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvFiliere.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
       this.dgvFiliere.RowHeadersVisible = false;
-      dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-      dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-      dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
-      dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      this.dgvFiliere.RowsDefaultCellStyle = dataGridViewCellStyle6;
+      dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+      dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      this.dgvFiliere.RowsDefaultCellStyle = dataGridViewCellStyle3;
       this.dgvFiliere.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
       this.dgvFiliere.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.dgvFiliere.Size = new System.Drawing.Size(321, 170);
@@ -212,7 +212,7 @@
       this.groupBox1.Controls.Add(this.textBoxNomFiliere);
       this.groupBox1.Controls.Add(this.label1);
       this.groupBox1.Font = new System.Drawing.Font("Sitka Small", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.groupBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
       this.groupBox1.Location = new System.Drawing.Point(26, 41);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Size = new System.Drawing.Size(548, 114);
@@ -290,7 +290,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
       this.BackColor = System.Drawing.Color.White;
-      this.ClientSize = new System.Drawing.Size(615, 550);
+      this.ClientSize = new System.Drawing.Size(615, 480);
       this.Controls.Add(this.panel2);
       this.Controls.Add(this.panel1);
       this.ForeColor = System.Drawing.Color.White;
