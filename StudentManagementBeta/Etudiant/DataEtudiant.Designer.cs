@@ -30,10 +30,10 @@ namespace StudentManagementBeta.Etudiant
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataEtudiant));
       this.panel1 = new System.Windows.Forms.Panel();
       this.TableDataEtud = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -49,9 +49,9 @@ namespace StudentManagementBeta.Etudiant
       this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
       this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
       this.PanelDrag = new System.Windows.Forms.Panel();
-      this.labelFiliere = new Bunifu.Framework.UI.BunifuCustomLabel();
       this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
       this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+      this.labelFiliere = new Bunifu.Framework.UI.BunifuCustomLabel();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.TableDataEtud)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -72,22 +72,22 @@ namespace StudentManagementBeta.Etudiant
       this.TableDataEtud.AllowUserToAddRows = false;
       this.TableDataEtud.AllowUserToDeleteRows = false;
       this.TableDataEtud.AllowUserToOrderColumns = true;
-      dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-      this.TableDataEtud.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+      this.TableDataEtud.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
       this.TableDataEtud.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
       this.TableDataEtud.BackgroundColor = System.Drawing.Color.White;
       this.TableDataEtud.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.TableDataEtud.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
       this.TableDataEtud.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
       this.TableDataEtud.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
-      dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-      dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.TableDataEtud.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.TableDataEtud.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
       this.TableDataEtud.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.TableDataEtud.DoubleBuffered = true;
       this.TableDataEtud.EnableHeadersVisualStyles = false;
@@ -98,16 +98,16 @@ namespace StudentManagementBeta.Etudiant
       this.TableDataEtud.Name = "TableDataEtud";
       this.TableDataEtud.ReadOnly = true;
       this.TableDataEtud.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.TableDataEtud.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-      dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      this.TableDataEtud.RowsDefaultCellStyle = dataGridViewCellStyle8;
+      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.TableDataEtud.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+      dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.TableDataEtud.RowsDefaultCellStyle = dataGridViewCellStyle4;
       this.TableDataEtud.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.TableDataEtud.Size = new System.Drawing.Size(880, 337);
       this.TableDataEtud.TabIndex = 0;
@@ -399,16 +399,6 @@ namespace StudentManagementBeta.Etudiant
       this.PanelDrag.Size = new System.Drawing.Size(921, 40);
       this.PanelDrag.TabIndex = 23;
       // 
-      // labelFiliere
-      // 
-      this.labelFiliere.AutoSize = true;
-      this.labelFiliere.Font = new System.Drawing.Font("Segoe UI Historic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelFiliere.Location = new System.Drawing.Point(367, 7);
-      this.labelFiliere.Name = "labelFiliere";
-      this.labelFiliere.Size = new System.Drawing.Size(202, 30);
-      this.labelFiliere.TabIndex = 4;
-      this.labelFiliere.Text = "Gére Les Etudiants";
-      // 
       // bunifuImageButton2
       // 
       this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
@@ -430,6 +420,16 @@ namespace StudentManagementBeta.Etudiant
       this.bunifuDragControl1.Horizontal = true;
       this.bunifuDragControl1.TargetControl = this.PanelDrag;
       this.bunifuDragControl1.Vertical = true;
+      // 
+      // labelFiliere
+      // 
+      this.labelFiliere.AutoSize = true;
+      this.labelFiliere.Font = new System.Drawing.Font("Segoe UI Historic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFiliere.Location = new System.Drawing.Point(367, 7);
+      this.labelFiliere.Name = "labelFiliere";
+      this.labelFiliere.Size = new System.Drawing.Size(202, 30);
+      this.labelFiliere.TabIndex = 4;
+      this.labelFiliere.Text = "Gére Les Etudiants";
       // 
       // DataEtudiant
       // 

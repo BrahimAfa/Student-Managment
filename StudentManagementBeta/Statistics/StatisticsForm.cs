@@ -68,5 +68,10 @@ namespace StudentManagementBeta.Statistics
             k++;
         }
     }
+
+    private void pictureBox1_Click(object sender, EventArgs e)
+    {
+      this.Close();
+    }
   }
 }
