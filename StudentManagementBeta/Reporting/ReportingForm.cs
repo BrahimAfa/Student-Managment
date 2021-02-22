@@ -59,5 +59,10 @@ namespace StudentManagementBeta.Reporting
         {
             new printAllForm().ShowDialog();
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
