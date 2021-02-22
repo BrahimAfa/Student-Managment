@@ -39,6 +39,7 @@
       this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
       this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
       this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+      this.labelFiliere = new Bunifu.Framework.UI.BunifuCustomLabel();
       this.PanelDrag.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
       this.panel2.SuspendLayout();
@@ -52,6 +53,7 @@
       // PanelDrag
       // 
       this.PanelDrag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(245)))));
+      this.PanelDrag.Controls.Add(this.labelFiliere);
       this.PanelDrag.Controls.Add(this.bunifuImageButton1);
       this.PanelDrag.Cursor = System.Windows.Forms.Cursors.SizeAll;
       this.PanelDrag.Dock = System.Windows.Forms.DockStyle.Top;
@@ -197,6 +199,16 @@
       this.bunifuDragControl1.TargetControl = this.PanelDrag;
       this.bunifuDragControl1.Vertical = true;
       // 
+      // labelFiliere
+      // 
+      this.labelFiliere.AutoSize = true;
+      this.labelFiliere.Font = new System.Drawing.Font("Segoe UI Historic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFiliere.Location = new System.Drawing.Point(363, 6);
+      this.labelFiliere.Name = "labelFiliere";
+      this.labelFiliere.Size = new System.Drawing.Size(71, 30);
+      this.labelFiliere.TabIndex = 4;
+      this.labelFiliere.Text = "Menu";
+      // 
       // FormMenu
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +221,7 @@
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Form1";
       this.PanelDrag.ResumeLayout(false);
+      this.PanelDrag.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
       this.panel2.ResumeLayout(false);
       this.ResumeLayout(false);
@@ -227,6 +240,7 @@
     private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton3;
     private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton2;
     private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton5;
+    private Bunifu.Framework.UI.BunifuCustomLabel labelFiliere;
   }
 }
 

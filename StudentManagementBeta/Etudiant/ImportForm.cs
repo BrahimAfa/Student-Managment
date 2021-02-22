@@ -50,8 +50,8 @@ namespace StudentManagementBeta.Etudiant
     {
       if (openFileDialog1.ShowDialog() == DialogResult.OK)
       {
-        txtImport.Enabled = false;
-        txtImport.Text = openFileDialog1.FileName;
+        btnImport.Enabled = false;
+        btnImport.Text = openFileDialog1.FileName;
         txtDelim.Visible = true;
         AjouterEtudiant.Visible = true;
         bunifuCustomLabel1.Visible = true;
@@ -63,7 +63,7 @@ namespace StudentManagementBeta.Etudiant
       {
         pictureBox1.Show();
         pictureBox1.Update();
-        var i = await Import(txtImport.Text, txtDelim.Text);
+        var i = await Import(btnImport.Text, txtDelim.Text);
         MessageBox.Show(i.ToString());
       }
       catch(Exception ex)
@@ -113,6 +113,21 @@ namespace StudentManagementBeta.Etudiant
     private void bunifuImageButton1_Click(object sender, EventArgs e)
     {
       this.Close();
+    }
+
+    private void txtImport_MouseClick(object sender, MouseEventArgs e)
+    {
+      MessageBox.Show("Test");
+    }
+
+    private void btnImport_Click(object sender, EventArgs e)
+    {
+      txtImport_Click(sender, e);
+    }
+
+    private void panel2_Paint(object sender, PaintEventArgs e)
+    {
+
     }
   }
 }

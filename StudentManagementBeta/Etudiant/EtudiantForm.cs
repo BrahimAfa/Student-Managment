@@ -28,9 +28,9 @@
         {
           throw new Exception("Etudiant is required in case of an update");
         }
+        labelFiliere.Text = "Modifier Etudiant";
         fillInputsWithUpdateEtude(updateEtud);
         this.AjouterEtudiant.Text = "Modifier";
-        this.ImporterExcel.Visible = false;
         this.Text = "Modifier Etudiant";
       }
     }
@@ -44,7 +44,7 @@
         bunifuDatepicker1.Value = Convert.ToDateTime(updateEtud.DOBEtudiant);
         inputAdresseEtudiant.Text = updateEtud.adresseEtudiant;
         inputTeleEtudiant.Text = updateEtud.teleEtudiant;
-      comboBox1.SelectedValue = updateEtud.id_filiere;
+      comboBox12.SelectedValue = updateEtud.id_filiere;
     }
 
     private void Form_Etudiant_Load(object sender, EventArgs e)
@@ -93,9 +93,9 @@
     }
     void fillFiliereCombo()
     {
-      comboBox1.DataSource = filiereService.getAll();
-      comboBox1.ValueMember = "ID_Filiere";
-      comboBox1.DisplayMember = "FiliereName";
+      comboBox12.DataSource = filiereService.getAll();
+      comboBox12.ValueMember = "ID_Filiere";
+      comboBox12.DisplayMember = "FiliereName";
     }
     EtudiantModel getEtudiantFromInputs()
     {
@@ -106,9 +106,14 @@
       string date = bunifuDatepicker1.Text;
       string adresse = inputAdresseEtudiant.Text;
       string tele = inputTeleEtudiant.Text;
-      int id_filiere = int.Parse(comboBox1.SelectedValue.ToString());
+      int id_filiere = int.Parse(comboBox12.SelectedValue.ToString());
       if (this.updateEtud != null) return new EtudiantModel(this.updateEtud.id,CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
       return new EtudiantModel(CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
+    }
+
+    private void bunifuImageButton1_Click(object sender, EventArgs e)
+    {
+      this.Close();
     }
   }
 }

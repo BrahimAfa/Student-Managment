@@ -133,5 +133,10 @@
         MessageBox.Show($"ERROR :: {ex.Message}");
       }
     }
+
+    private void bunifuImageButton2_Click(object sender, EventArgs e)
+    {
+      this.Close();
+    }
   }
 }
