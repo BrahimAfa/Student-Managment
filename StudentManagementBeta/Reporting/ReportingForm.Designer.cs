@@ -33,19 +33,19 @@ namespace StudentManagementBeta.Reporting
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelFiliere = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonAllStudent = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAfficher = new Bunifu.Framework.UI.BunifuFlatButton();
             this.textBoxCNE = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonAllStudent = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.labelFiliere = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -55,45 +55,83 @@ namespace StudentManagementBeta.Reporting
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(48)))), ((int)(((byte)(87)))));
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(245)))));
             this.panel1.Controls.Add(this.labelFiliere);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(-4, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(615, 37);
+            this.panel1.Size = new System.Drawing.Size(615, 38);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Red;
             this.pictureBox1.Image = global::StudentManagementBeta.Properties.Resources.icons8_Delete_32px;
-            this.pictureBox1.Location = new System.Drawing.Point(582, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(578, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 32);
+            this.pictureBox1.Size = new System.Drawing.Size(37, 37);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // labelFiliere
-            // 
-            this.labelFiliere.AutoSize = true;
-            this.labelFiliere.Font = new System.Drawing.Font("Segoe UI Historic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFiliere.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelFiliere.Location = new System.Drawing.Point(21, 3);
-            this.labelFiliere.Name = "labelFiliere";
-            this.labelFiliere.Size = new System.Drawing.Size(113, 30);
-            this.labelFiliere.TabIndex = 0;
-            this.labelFiliere.Text = "Reporting";
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(122)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(186)))), ((int)(((byte)(255)))));
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Location = new System.Drawing.Point(-1, 36);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(612, 322);
             this.panel2.TabIndex = 2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.buttonAllStudent);
+            this.groupBox2.Font = new System.Drawing.Font("Sitka Small", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Lavender;
+            this.groupBox2.Location = new System.Drawing.Point(33, 49);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(548, 114);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Afficher Tous les Etudiants";
+            // 
+            // buttonAllStudent
+            // 
+            this.buttonAllStudent.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(145)))));
+            this.buttonAllStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(79)))), ((int)(((byte)(167)))));
+            this.buttonAllStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAllStudent.BorderRadius = 6;
+            this.buttonAllStudent.ButtonText = "Afficher";
+            this.buttonAllStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAllStudent.DisabledColor = System.Drawing.Color.Gray;
+            this.buttonAllStudent.Font = new System.Drawing.Font("Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.buttonAllStudent.Iconcolor = System.Drawing.Color.Transparent;
+            this.buttonAllStudent.Iconimage = null;
+            this.buttonAllStudent.Iconimage_right = null;
+            this.buttonAllStudent.Iconimage_right_Selected = null;
+            this.buttonAllStudent.Iconimage_Selected = null;
+            this.buttonAllStudent.IconMarginLeft = 0;
+            this.buttonAllStudent.IconMarginRight = 0;
+            this.buttonAllStudent.IconRightVisible = true;
+            this.buttonAllStudent.IconRightZoom = 0D;
+            this.buttonAllStudent.IconVisible = true;
+            this.buttonAllStudent.IconZoom = 90D;
+            this.buttonAllStudent.IsTab = false;
+            this.buttonAllStudent.Location = new System.Drawing.Point(201, 42);
+            this.buttonAllStudent.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonAllStudent.Name = "buttonAllStudent";
+            this.buttonAllStudent.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(145)))));
+            this.buttonAllStudent.OnHovercolor = System.Drawing.Color.Teal;
+            this.buttonAllStudent.OnHoverTextColor = System.Drawing.Color.White;
+            this.buttonAllStudent.selected = true;
+            this.buttonAllStudent.Size = new System.Drawing.Size(115, 38);
+            this.buttonAllStudent.TabIndex = 3;
+            this.buttonAllStudent.Text = "Afficher";
+            this.buttonAllStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonAllStudent.Textcolor = System.Drawing.Color.White;
+            this.buttonAllStudent.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAllStudent.Click += new System.EventHandler(this.buttonAllStudent_Click);
             // 
             // groupBox1
             // 
@@ -113,7 +151,7 @@ namespace StudentManagementBeta.Reporting
             // btnAfficher
             // 
             this.btnAfficher.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(145)))));
-            this.btnAfficher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(145)))));
+            this.btnAfficher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(79)))), ((int)(((byte)(167)))));
             this.btnAfficher.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAfficher.BorderRadius = 6;
             this.btnAfficher.ButtonText = "Afficher";
@@ -166,56 +204,17 @@ namespace StudentManagementBeta.Reporting
             this.label1.TabIndex = 0;
             this.label1.Text = "Saisir un CNE:";
             // 
-            // groupBox2
+            // labelFiliere
             // 
-            this.groupBox2.Controls.Add(this.buttonAllStudent);
-            this.groupBox2.Font = new System.Drawing.Font("Sitka Small", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.Lavender;
-            this.groupBox2.Location = new System.Drawing.Point(33, 49);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(548, 114);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Afficher Tous les Etudiants";
+            this.labelFiliere.AutoSize = true;
+            this.labelFiliere.Font = new System.Drawing.Font("Segoe UI Historic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFiliere.Location = new System.Drawing.Point(239, 3);
+            this.labelFiliere.Name = "labelFiliere";
+            this.labelFiliere.Size = new System.Drawing.Size(113, 30);
+            this.labelFiliere.TabIndex = 5;
+            this.labelFiliere.Text = "Reporting";
             // 
-            // buttonAllStudent
-            // 
-            this.buttonAllStudent.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(145)))));
-            this.buttonAllStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(145)))));
-            this.buttonAllStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAllStudent.BorderRadius = 6;
-            this.buttonAllStudent.ButtonText = "Afficher";
-            this.buttonAllStudent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAllStudent.DisabledColor = System.Drawing.Color.Gray;
-            this.buttonAllStudent.Font = new System.Drawing.Font("Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.buttonAllStudent.Iconcolor = System.Drawing.Color.Transparent;
-            this.buttonAllStudent.Iconimage = null;
-            this.buttonAllStudent.Iconimage_right = null;
-            this.buttonAllStudent.Iconimage_right_Selected = null;
-            this.buttonAllStudent.Iconimage_Selected = null;
-            this.buttonAllStudent.IconMarginLeft = 0;
-            this.buttonAllStudent.IconMarginRight = 0;
-            this.buttonAllStudent.IconRightVisible = true;
-            this.buttonAllStudent.IconRightZoom = 0D;
-            this.buttonAllStudent.IconVisible = true;
-            this.buttonAllStudent.IconZoom = 90D;
-            this.buttonAllStudent.IsTab = false;
-            this.buttonAllStudent.Location = new System.Drawing.Point(201, 42);
-            this.buttonAllStudent.Margin = new System.Windows.Forms.Padding(6);
-            this.buttonAllStudent.Name = "buttonAllStudent";
-            this.buttonAllStudent.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(145)))));
-            this.buttonAllStudent.OnHovercolor = System.Drawing.Color.Teal;
-            this.buttonAllStudent.OnHoverTextColor = System.Drawing.Color.White;
-            this.buttonAllStudent.selected = true;
-            this.buttonAllStudent.Size = new System.Drawing.Size(115, 38);
-            this.buttonAllStudent.TabIndex = 3;
-            this.buttonAllStudent.Text = "Afficher";
-            this.buttonAllStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonAllStudent.Textcolor = System.Drawing.Color.White;
-            this.buttonAllStudent.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAllStudent.Click += new System.EventHandler(this.buttonAllStudent_Click);
-            // 
-            // Reporting_Etudiant_Form
+            // ReportingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -223,7 +222,7 @@ namespace StudentManagementBeta.Reporting
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Reporting_Etudiant_Form";
+            this.Name = "ReportingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Reporting_Etudiant_Form";
             this.Load += new System.EventHandler(this.Reporting_Etudiant_Form_Load);
@@ -231,9 +230,9 @@ namespace StudentManagementBeta.Reporting
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -243,7 +242,6 @@ namespace StudentManagementBeta.Reporting
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuCustomLabel labelFiliere;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox1;
         private Bunifu.Framework.UI.BunifuFlatButton btnAfficher;
@@ -251,5 +249,6 @@ namespace StudentManagementBeta.Reporting
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private Bunifu.Framework.UI.BunifuFlatButton buttonAllStudent;
+        private Bunifu.Framework.UI.BunifuCustomLabel labelFiliere;
     }
 }
