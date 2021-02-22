@@ -39,11 +39,17 @@ namespace StudentManagementBeta.Reporting
         {
             string cne = this.textBoxCNE.Text;
             EtudiantModel etudiant = etudaiantService.getByCNE(cne);
-            string nomFillier = fil.getFiliereName(etudiant.id_filiere);
-            
-            using(Print__Etudiant_Form print=new Print__Etudiant_Form(etudiant,nomFillier))
+            if (etudiant == null)
             {
-                print.ShowDialog();
+                Core.Utils.Helpers.showErrorMessage("Etudiant non trouvé!!!");
+            }
+            else {
+                string nomFillier = fil.getFiliereName(etudiant.id_filiere);
+
+                using (Print__Etudiant_Form print = new Print__Etudiant_Form(etudiant, nomFillier))
+                {
+                    print.ShowDialog();
+                }
             }
 
 

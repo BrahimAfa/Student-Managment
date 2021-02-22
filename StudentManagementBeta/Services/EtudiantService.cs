@@ -143,7 +143,11 @@
             Connection.open();
             SqlDataReader dr = cmd.ExecuteReader();
             dr.Read();
-            if (!dr.HasRows) return null;
+            if (!dr.HasRows)
+            {
+                dr.Close();
+                return null;
+            }
             int idEtud = int.Parse(dr["ID_Etudiant"].ToString());
             string CNE = dr["CNE"].ToString();
             string nom = dr["LastName"].ToString();
@@ -154,7 +158,9 @@
             string tele = dr["tele"].ToString();
             int id_filiere = int.Parse(dr["ID_Filiere"].ToString());
             EtudiantModel etud = new EtudiantModel(idEtud, CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
+            dr.Close();
             Connection.close();
+           
             return etud;
         }
     }
