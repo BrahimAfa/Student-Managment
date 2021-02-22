@@ -545,7 +545,6 @@
         <PageHeader>
           <Height>5.20435cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Textbox Name="Textbox2">
               <CanGrow>true</CanGrow>
