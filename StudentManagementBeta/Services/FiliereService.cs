@@ -6,7 +6,7 @@
   using System.Data;
   using System.Data.SqlClient;
 
-  internal class FiliereService : IDAO<object>
+  internal class FiliereService : IDAO<Filiere.Filiere>
   {
     public bool delete(object id)
     {
@@ -36,11 +36,6 @@
 
     public DataTable get(object id)
     {
-      return null;
-    }
-
-    public object get(int id)
-    {
       throw new NotImplementedException();
     }
 
@@ -65,14 +60,13 @@
       }
     }
 
-    public bool insert(object data)
+    public bool insert(Filiere.Filiere data)
     {
       bool aide = false;
       string query = "INSERT INTO Filiere(FiliereName) VALUES (@data);";
       SqlConnection conn = Connection.sqlConnection;
       SqlCommand cmd = new SqlCommand(query, conn);
-      cmd.Parameters.AddWithValue("@data", data);
-      DataTable dt = new DataTable("fil");
+      cmd.Parameters.AddWithValue("@data", data.FilierName);
       Connection.open();
 
       try
@@ -91,14 +85,31 @@
       return aide;
     }
 
-    public bool insertMany(List<object> data)
+    public bool insertMany(List<Filiere.Filiere> data)
     {
       throw new NotImplementedException();
     }
 
-    public bool update(object data)
+    public bool update(Filiere.Filiere data)
     {
-      throw new NotImplementedException();
+      bool aide = false;
+      string query = "UPDATE Filiere SET FiliereName = @name where Id_Filiere=@id";
+      SqlConnection conn = Connection.sqlConnection;
+      SqlCommand cmd = new SqlCommand(query, conn);
+      cmd.Parameters.AddWithValue("@id", data.Id);
+      cmd.Parameters.AddWithValue("@name", data.FilierName);
+      try {
+        Connection.open();
+        cmd.ExecuteNonQuery();
+        aide = true;
+      } catch (SqlException ex) {
+        System.Windows.Forms.MessageBox.Show(ex.Message);
+      }
+      finally
+      {
+        Connection.close();
+      }
+      return aide;
     }
 
     public string getFiliereName(int id)

@@ -13,8 +13,6 @@
 
     DataTable get(object id); // filter
 
-    T get(int id);
-
     DataTable getAll();
 
     bool insertMany(List<T> data);

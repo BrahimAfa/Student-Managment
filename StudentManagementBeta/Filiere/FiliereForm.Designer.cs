@@ -29,9 +29,9 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
       this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
       this.panel1 = new System.Windows.Forms.Panel();
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,11 +44,16 @@
       this.textBoxNomFiliere = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
       this.label1 = new System.Windows.Forms.Label();
       this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+      this.groupBox2 = new System.Windows.Forms.GroupBox();
+      this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+      this.bunifuCustomTextbox1 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+      this.label2 = new System.Windows.Forms.Label();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.panel2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvFiliere)).BeginInit();
       this.groupBox1.SuspendLayout();
+      this.groupBox2.SuspendLayout();
       this.SuspendLayout();
       // 
       // bunifuElipse1
@@ -79,6 +84,7 @@
       // panel2
       // 
       this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(225)))), ((int)(((byte)(231)))));
+      this.panel2.Controls.Add(this.groupBox2);
       this.panel2.Controls.Add(this.btnSupprimer);
       this.panel2.Controls.Add(this.btnModifier);
       this.panel2.Controls.Add(this.dgvFiliere);
@@ -110,7 +116,7 @@
       this.btnSupprimer.IconVisible = true;
       this.btnSupprimer.IconZoom = 90D;
       this.btnSupprimer.IsTab = false;
-      this.btnSupprimer.Location = new System.Drawing.Point(319, 389);
+      this.btnSupprimer.Location = new System.Drawing.Point(319, 399);
       this.btnSupprimer.Margin = new System.Windows.Forms.Padding(6);
       this.btnSupprimer.Name = "btnSupprimer";
       this.btnSupprimer.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(79)))), ((int)(((byte)(167)))));
@@ -147,7 +153,7 @@
       this.btnModifier.IconVisible = true;
       this.btnModifier.IconZoom = 90D;
       this.btnModifier.IsTab = false;
-      this.btnModifier.Location = new System.Drawing.Point(156, 389);
+      this.btnModifier.Location = new System.Drawing.Point(156, 399);
       this.btnModifier.Margin = new System.Windows.Forms.Padding(6);
       this.btnModifier.Name = "btnModifier";
       this.btnModifier.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(79)))), ((int)(((byte)(167)))));
@@ -160,6 +166,7 @@
       this.btnModifier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       this.btnModifier.Textcolor = System.Drawing.Color.White;
       this.btnModifier.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
       // 
       // dgvFiliere
       // 
@@ -172,39 +179,41 @@
       this.dgvFiliere.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.dgvFiliere.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
       this.dgvFiliere.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.dgvFiliere.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+      dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvFiliere.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
       this.dgvFiliere.ColumnHeadersHeight = 27;
       this.dgvFiliere.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
       this.dgvFiliere.EnableHeadersVisualStyles = false;
       this.dgvFiliere.GridColor = System.Drawing.Color.SteelBlue;
-      this.dgvFiliere.Location = new System.Drawing.Point(156, 190);
+      this.dgvFiliere.Location = new System.Drawing.Point(156, 137);
       this.dgvFiliere.Name = "dgvFiliere";
       this.dgvFiliere.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.dgvFiliere.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+      dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
+      dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvFiliere.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
       this.dgvFiliere.RowHeadersVisible = false;
-      dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-      dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      this.dgvFiliere.RowsDefaultCellStyle = dataGridViewCellStyle3;
+      dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+      dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
+      dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      this.dgvFiliere.RowsDefaultCellStyle = dataGridViewCellStyle6;
       this.dgvFiliere.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
       this.dgvFiliere.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.dgvFiliere.Size = new System.Drawing.Size(321, 170);
       this.dgvFiliere.TabIndex = 1;
+      this.dgvFiliere.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFiliere_CellEndEdit);
+      this.dgvFiliere.CurrentCellChanged += new System.EventHandler(this.dgvFiliere_CurrentCellChanged);
       // 
       // groupBox1
       // 
@@ -213,7 +222,7 @@
       this.groupBox1.Controls.Add(this.label1);
       this.groupBox1.Font = new System.Drawing.Font("Sitka Small", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
-      this.groupBox1.Location = new System.Drawing.Point(26, 41);
+      this.groupBox1.Location = new System.Drawing.Point(26, 17);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Size = new System.Drawing.Size(548, 114);
       this.groupBox1.TabIndex = 0;
@@ -270,7 +279,7 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(31, 56);
+      this.label1.Location = new System.Drawing.Point(27, 56);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(142, 24);
       this.label1.TabIndex = 0;
@@ -282,6 +291,77 @@
       this.bunifuDragControl1.Horizontal = true;
       this.bunifuDragControl1.TargetControl = this.panel1;
       this.bunifuDragControl1.Vertical = true;
+      // 
+      // groupBox2
+      // 
+      this.groupBox2.Controls.Add(this.bunifuFlatButton1);
+      this.groupBox2.Controls.Add(this.bunifuCustomTextbox1);
+      this.groupBox2.Controls.Add(this.label2);
+      this.groupBox2.Font = new System.Drawing.Font("Sitka Small", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(109)))));
+      this.groupBox2.Location = new System.Drawing.Point(38, 313);
+      this.groupBox2.Name = "groupBox2";
+      this.groupBox2.Size = new System.Drawing.Size(548, 72);
+      this.groupBox2.TabIndex = 3;
+      this.groupBox2.TabStop = false;
+      this.groupBox2.Text = "Modifier filière ";
+      this.groupBox2.Visible = false;
+      // 
+      // bunifuFlatButton1
+      // 
+      this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(79)))), ((int)(((byte)(167)))));
+      this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(79)))), ((int)(((byte)(167)))));
+      this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.bunifuFlatButton1.BorderRadius = 6;
+      this.bunifuFlatButton1.ButtonText = "Modifier";
+      this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+      this.bunifuFlatButton1.Font = new System.Drawing.Font("Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+      this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+      this.bunifuFlatButton1.Iconimage = null;
+      this.bunifuFlatButton1.Iconimage_right = null;
+      this.bunifuFlatButton1.Iconimage_right_Selected = null;
+      this.bunifuFlatButton1.Iconimage_Selected = null;
+      this.bunifuFlatButton1.IconMarginLeft = 0;
+      this.bunifuFlatButton1.IconMarginRight = 0;
+      this.bunifuFlatButton1.IconRightVisible = true;
+      this.bunifuFlatButton1.IconRightZoom = 0D;
+      this.bunifuFlatButton1.IconVisible = true;
+      this.bunifuFlatButton1.IconZoom = 90D;
+      this.bunifuFlatButton1.IsTab = false;
+      this.bunifuFlatButton1.Location = new System.Drawing.Point(382, 25);
+      this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(6);
+      this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+      this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(79)))), ((int)(((byte)(167)))));
+      this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(94)))), ((int)(((byte)(198)))));
+      this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+      this.bunifuFlatButton1.selected = true;
+      this.bunifuFlatButton1.Size = new System.Drawing.Size(115, 38);
+      this.bunifuFlatButton1.TabIndex = 1;
+      this.bunifuFlatButton1.Text = "Modifier";
+      this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+      this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+      // 
+      // bunifuCustomTextbox1
+      // 
+      this.bunifuCustomTextbox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+      this.bunifuCustomTextbox1.BorderColor = System.Drawing.Color.DarkSlateGray;
+      this.bunifuCustomTextbox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.bunifuCustomTextbox1.Location = new System.Drawing.Point(173, 32);
+      this.bunifuCustomTextbox1.Name = "bunifuCustomTextbox1";
+      this.bunifuCustomTextbox1.Size = new System.Drawing.Size(177, 26);
+      this.bunifuCustomTextbox1.TabIndex = 2;
+      // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Location = new System.Drawing.Point(25, 32);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(142, 24);
+      this.label2.TabIndex = 0;
+      this.label2.Text = "Nom de filière :";
       // 
       // FiliereForm
       // 
@@ -305,6 +385,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.dgvFiliere)).EndInit();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
+      this.groupBox2.ResumeLayout(false);
+      this.groupBox2.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -323,5 +405,9 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnModifier;
     private System.Windows.Forms.GroupBox groupBox1;
     private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+    private System.Windows.Forms.GroupBox groupBox2;
+    private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+    private WindowsFormsControlLibrary1.BunifuCustomTextbox bunifuCustomTextbox1;
+    private System.Windows.Forms.Label label2;
   }
 }

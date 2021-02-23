@@ -23,20 +23,16 @@ namespace StudentManagementBeta.Etudiant
       InitializeComponent();
       pictureBox1.Hide();
       loadingPictureBox = new TransparentPictureBox();
-      loadingPictureBox.Image = global::StudentManagementBeta.myResouces.Loader;
+      loadingPictureBox.Image = myResouces.Loader;
       openFileDialog1 = new OpenFileDialog
       {
         InitialDirectory = @"c:\",
         Title = "Browse Student CSV File",
-
         CheckFileExists = true,
         CheckPathExists = true,
-
         DefaultExt = "csv",
         Filter = "csv files (*.csv)|*.csv",
-        FilterIndex = 2,
         RestoreDirectory = true,
-
         ReadOnlyChecked = true,
         ShowReadOnly = true
       };
@@ -57,32 +53,25 @@ namespace StudentManagementBeta.Etudiant
         bunifuCustomLabel1.Visible = true;
       }
     }
-    private async void AjouterEtudiant_Click(object sender, EventArgs e)
-    {
-      try
-      {
+    private async void AjouterEtudiant_Click(object sender, EventArgs e){
+      try{
         pictureBox1.Show();
         pictureBox1.Update();
         var i = await Import(btnImport.Text, txtDelim.Text);
         MessageBox.Show(i.ToString());
       }
-      catch(Exception ex)
-      {
+      catch(Exception ex){
         Core.Utils.Helpers.showErrorMessage(ex.Message);
       }
-      finally
-      {
+      finally{
         pictureBox1.Hide();
-
       }
 
     }
 
-    private Task<int> Import(string csvFilePath,string delimiter)
-    {
+    private Task<int> Import(string csvFilePath,string delimiter){
       int i = 0;
-      using (TextFieldParser parser = new TextFieldParser(csvFilePath))
-      {
+      using (TextFieldParser parser = new TextFieldParser(csvFilePath)){
         parser.TextFieldType = FieldType.Delimited;
         parser.SetDelimiters(delimiter);
         parser.ReadFields(); // avoid Header.
@@ -97,6 +86,7 @@ namespace StudentManagementBeta.Etudiant
       }
       return Task.FromResult(i);
     }
+
     EtudiantModel getEtudiantFromInputs(string[] fields)
     {
       string CNE = fields[0];

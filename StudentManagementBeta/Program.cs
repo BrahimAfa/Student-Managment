@@ -16,7 +16,7 @@ namespace StudentManagementBeta
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new FormMenu());
+      Application.Run(new Filiere.FiliereForm());
     }
   }
 }
