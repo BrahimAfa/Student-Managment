@@ -56,11 +56,7 @@
       new DataEtudiant().Show();
     }
 
-    private void AjouterEtudiant_Click(object sender, EventArgs e)
-    {
-      EtudiantModel etudiant = getEtudiantFromInputs();
-      refreshGridRegister(etudiant);
-    }
+   
 
     private bool checkInfo(string CNE, string nom, string prenom, string sexe, string date, string adresse, string tele, int id_filiere)
     {
@@ -98,22 +94,55 @@
       comboBox12.DisplayMember = "FiliereName";
     }
     EtudiantModel getEtudiantFromInputs()
-    {
-      string CNE = inputCNEEtudiant.Text;
-      string nom = inputNomEtudiant.Text;
-      string prenom = inputPrenomEtudiant.Text;
-      string sexe = CheckedSexe();
-      string date = bunifuDatepicker1.Text;
-      string adresse = inputAdresseEtudiant.Text;
-      string tele = inputTeleEtudiant.Text;
-      int id_filiere = int.Parse(comboBox12.SelectedValue.ToString());
-      if (this.updateEtud != null) return new EtudiantModel(this.updateEtud.id,CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
-      return new EtudiantModel(CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
-    }
+        {
+            // MessageBox.Show();
+       
+            string CNE = inputCNEEtudiant.Text;
+            string nom = inputNomEtudiant.Text;
+            string prenom = inputPrenomEtudiant.Text;
+            string sexe = CheckedSexe();
+            string date = bunifuDatepicker1.Value.ToString("MM/dd/yyyy");
+            string adresse = inputAdresseEtudiant.Text;
+            string tele = inputTeleEtudiant.Text;
+            int id_filiere = int.Parse(comboBox12.SelectedValue.ToString());
+            if (this.updateEtud != null) return new EtudiantModel(this.updateEtud.id, CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
+            return new EtudiantModel(CNE, nom, prenom, sexe, date, adresse, tele, id_filiere);
+        }
 
-    private void bunifuImageButton1_Click(object sender, EventArgs e)
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
     {
       this.Close();
     }
-  }
+
+        private void AjouterEtudiant_Click_1(object sender, EventArgs e)
+        {
+            string validationMessage = ValidateInputs();
+            if (validationMessage != null)
+            {
+                Core.Utils.Helpers.showErrorMessage(validationMessage);
+                return;
+            }
+            EtudiantModel etudiant = getEtudiantFromInputs();
+            refreshGridRegister(etudiant);
+        }
+        string ValidateInputs()
+        {
+            string CNE = inputCNEEtudiant.Text;
+            string nom = inputNomEtudiant.Text;
+            string prenom = inputPrenomEtudiant.Text;
+            string sexe = CheckedSexe();
+            string date = bunifuDatepicker1.Value.ToString("MM/dd/yyyy");
+            string adresse = inputAdresseEtudiant.Text;
+            string tele = inputTeleEtudiant.Text;
+            
+            if (string.IsNullOrEmpty(CNE)) return "CNE is required";
+            if (string.IsNullOrEmpty(nom)) return "Last name is required";
+            if (string.IsNullOrEmpty(prenom)) return "First name is required";
+            if (string.IsNullOrEmpty(sexe)) return "gender is required";
+            if (string.IsNullOrEmpty(date) )return "date of birth is required";
+            if (string.IsNullOrEmpty(adresse)) return "adresse is required";
+            if (string.IsNullOrEmpty(tele) )return "phone is required";
+            return null;
+        }
+    }
 }

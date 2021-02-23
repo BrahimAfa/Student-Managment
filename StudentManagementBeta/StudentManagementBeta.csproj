@@ -205,6 +205,7 @@
     <EmbeddedResource Include="Statistics\StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Etudiants.csv" />
     <None Include="filiere.xsc">
       <DependentUpon>filiere.xsd</DependentUpon>
     </None>
